@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Exercise</title>
+</head>
+<body>
+    <h1>Question  number 1</h1>
+    <input type="number" id="inp1"><br>
+    <input type="number" id="inp2"><br>
+    <button onclick="multi()">Multiply</button>
+    <button onclick="divi()">Divide</button>
+    <div id="answer">
+    </div>
+<h1>Question number 2</h1>
+<select id="main">
+<option value="Banana">Banana</option>
+<option value="Apple">Apple</option>
+<option value="Strawberry">Strawberry</option>
+</select>
+
+
+<h1>Question 3</h1>
+<div id="allcheckboxes">
+<input class="f1" type="checkbox" value="Banana"><label>Banana</label> <br>
+<input class="f1" type="checkbox" value="Apple"><label>Apple</label><br>
+<input class="f1" type="checkbox" value="Strawberry"><label>Strawberry</label><br>
+</div>
+
+
+
+<h1>Question number 3</h1>
+<label for="">Enter Radius of sphere</label><br>
+<input type="number" id="inpradius"><br>
+<button onclick="calculateVolume()">Calculate</button>
+<div id="calculatedvol"></div>
+
+<h1>Question  number 4</h1>
+<div id="width"></div>
+<div id="height"></div>
+
+<h1>Bonus</h1>
+<h1 id="sentence">These <strong>exercises</strong> are all aimed at <strong>making</strong> you <strong>familiar</strong>familiar with the <strong>document object model</strong>document object model manipulation using JavaScript</h1>
+
+<script>
+
+
+    let inp1=document.getElementById('inp1');
+    let inp2=document.getElementById('inp2')
+    let answer=document.getElementById('answer');
+    
+        function multi(){
+            let product=inp1.value*inp2.value;
+            answer.innerHTML=product;
+        }
+        function divi(){
+            let divide=inp1.value/inp2.value;
+            answer.innerHTML=divide;
+        }
+    
+//question number 2;
+let main=document.getElementById('main');
+main.addEventListener('change',function(){
+    alert(`you selected ${main.value}`)
+});
+
+//question number 3
+let inpradius=document.getElementById('inpradius');
+function calculateVolume(){
+    let volume=(3/4)*Math.PI*Math.pow(inpradius.value,3);
+    document.getElementById('calculatedvol').innerHTML="Calculated volume of sphere is "+volume;
+}
+//question 3
+let fruits=document.getElementsByClassName('f1');
+let checkboxes=document.getElementById('allcheckboxes');
+checkboxes.addEventListener('change',function(){
+    for(let i=0;i<fruits.length;i++){
+     if(fruits[i].checked){
+         switch(fruits[i].value){
+             case "Banana":
+                 alert(fruits[i].value);
+                 break;
+            case "Apple":
+                alert (fruits[i].value);
+                break;
+            case "Strawberry":
+                alert(fruits[i].value);
+                break;
+         }
+     }
+    }
+})
+
+/* for(let i=0;i<fruits.length;i++){
+    switch(true){
+        case fruits[i].checked:
+            console.log(fruits[i].checked);
+            break;
+    }
+} */
+
+//question 4
+let width=document.getElementById('width');
+let height=document.getElementById('height');
+window.addEventListener('resize',function(){
+    let winwidth=window.innerWidth;
+    let winheight=window.innerHeight;
+    width.innerHTML=winwidth;
+    height.innerHTML=winheight;
+});
+
+//question number 5
+let sentence=document.getElementById('sentence');
+let strong=document.getElementsByTagName('strong');
+sentence.addEventListener('mouseover',function(){
+    for(let i=0;i<strong.length;i++){
+        strong[i].style.display="inline-block";
+        strong[i].style.backgroundColor="grey";
+    }
+});
+sentence.addEventListener('mouseout',function(){
+    for(let i=0;i<strong.length;i++){
+        strong[i].style.display="inline-block";
+        strong[i].style.backgroundColor="transparent";
+    }
+})
+</script>
+</body>
+</html>
+    

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+    <script>
+    let container=document.getElementById('container');//1
+   
+    let sec=document.querySelector('#container');//2
+    console.log(sec)
+    let allSecondClasslist=document.getElementsByClassName('second');//3
+   let itemThirdclass=document.getElementsByTagName('ol')[0].getElementsByClassName('third');//4
+   
+
+
+    sec.innerHTML+="Hello";//5
+
+    document.getElementsByClassName('footer')[0].classList.add('main');//6
+    document.getElementsByClassName('footer')[0].classList.remove('main');//7
+
+    let newElement=document.createElement('li');//8
+    newElement.innerHTML="four";//9
+
+    container.children[0].appendChild(newElement);//10
+
+    let ol=container.children[1];//11
+    console.log(ol)
+    for(let i=0;i<ol.childElementCount;i++){
+        ol.children[i].style.backgroundColor="yellow";
+    }
+
+document.getElementsByTagName('body')[0].removeChild(document.getElementsByClassName('footer')[0])//12
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
