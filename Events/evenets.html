@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+</head>
+<body>
+    <div id="main">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse accusantium porro fugit quae, vero alias doloribus adipisci doloremque reprehenderit?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ex, velit et nam cumque sapiente debitis inventore quo esse quaerat a praesentium eaque ullam, soluta commodi sequi porro, earum odit?</p>
+        <input type="text" id="inp"> <button onclick="additem()">add item</button>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+
+        </ul>
+
+
+    </div>
+    <script>
+    let main=document.getElementById('main');
+    main.addEventListener('click',function eventlist(e){
+        if(e.target.tagName==='P'){
+            e.target.style.backgroundColor="green";
+            e.target.style.color="white";
+        }
+        if(e.target.tagName==='LI'){
+            e.target.style.backgroundColor="yellow";
+        }
+        main.removeEventListener('click',eventlist)
+    });
+
+    main.addEventListener('mouseover',function(e){
+        if(e.target.tagName==='P'){
+            e.target.style.color="red";
+        }
+        if(e.target.tagName==='LI'){
+            e.target.style.color="green";
+        }
+    })
+    main.addEventListener('mouseout',function(e){
+        if(e.target.tagName==='P'){
+            e.target.style.color="black";
+        }
+        if(e.target.tagName==='LI'){
+            e.target.style.color="black";
+        }
+    });
+let inp=document.getElementById('inp');
+function additem(){
+    let ul=document.getElementsByTagName('ul');
+    console.dir(ul)
+    let elem=document.createElement('li');
+    elem.innerText=inp.value;
+    ul[0].appendChild(elem);
+    inp.value="";
+}
+
+inp.addEventListener('keydown',function(){
+    
+    if(inp.value.length>5){
+    inp.style.background="green";
+    }else{
+        inp.style.background="red";  
+    }
+})
+
+    </script>
+</body>
+</html>

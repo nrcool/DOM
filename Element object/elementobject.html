@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Element Object</title>
+</head>
+<body>
+    <h1>Element.previousElementSibling</h1>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, dicta.
+
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <span></span>
+        </p>
+    </div>
+
+
+    <h1>Element.closest</h1>
+
+    <article>
+        <div id="div-01">Here is div-01
+          <div id="div-02">Here is div-02
+            <div id="div-03">Here is div-03</div>
+          </div>
+        </div>
+      </article>
+
+
+    <h1>Element.matches</h1>
+    <ul id="birds">
+        <li>Orange-winged parrot</li>
+        <li class="endangered">Philippine eagle</li>
+        <li>Great white pelican</li>
+      </ul>
+
+    <script>
+    
+    
+    //closest element
+    var el = document.getElementById('div-03');
+
+var r1 = el.closest("#div-02");  
+// returns the element with the id=div-02
+
+var r2 = el.closest("div div");  
+// returns the closest ancestor which is a div in div, here it is the div-03 itself
+
+var r3 = el.closest("article > div");  
+// returns the closest ancestor which is a div and has a parent article, here it is the div-01
+
+var r4 = el.closest(":not(div)");
+// returns the closest ancestor which is not a div, here it is the outmost article
+
+
+
+
+//ELEMENT MATCHES
+
+var birds = document.getElementsByTagName('li');
+
+for (var i = 0; i < birds.length; i++) {
+  if (birds[i].matches('.endangered')) {
+    console.log('The ' + birds[i].textContent + ' is endangered!');
+  }
+}
+    </script>
+</body>
+</html>
