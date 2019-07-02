@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guessing Number</title>
+</head>
+<body>
+    <div class="root">
+        <h1 id="result"></h1>
+    </div>
+
+<script>
+let result =document.getElementById('result');
+let random=Math.floor(Math.random()*10+1);
+console.log(random);
+let inp;
+let i=1;
+while(i<4){
+    if(i==1){
+        inp=prompt("Please guess any number between 1 and 10");
+    }else{
+        inp=prompt("Wrong answer:try again :Please guess any number between 1 and 10");
+    }
+    
+    if(inp==random){
+        result.innerHTML="You guessed in "+i+" attemps: you sucessfully guessed the right number : "+random;
+        break;
+    }
+    i++;
+}
+if(i===4){
+    result.innerHTML="Sorry you couldn,t guess right number .. number was :"+random;
+
+}
+
+
+</script>
+</body>
+</html>
