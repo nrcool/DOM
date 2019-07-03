@@ -97,25 +97,32 @@ console.log(random);
 let attempt=0;
     function userguessNumber(){
         attempt++;
-        if(attempt===3){
-            header.innerHTML="SORRY USER"
-            displaytext.innerHTML=`The number is indeed : ${random}, You got the number after ${attempt} attemps.`;
-        inp.style.display="none";
-        guessbtn.style.display="none";
-        startgamebtn.style.display="inline-block";
-        attempt=0;
-        }
+        console.log(attempt)
         if(inp.value==random){
             header.innerHTML="SUCCESS";
             if(attempt===1){
-                displaytext.innerHTML=` You couldn,t guess the right number in ${attempt} attempt, the number was : ${random}`;
+                displaytext.innerHTML=`The number is indeed : ${random}, You got the number after ${attempt} attemps.`;
+            
             }else{
-                displaytext.innerHTML=` You couldn,t guess the right number in ${attempt} attempts, the number was : ${random}`;
+                displaytext.innerHTML=`The number is indeed : ${random}, You got the number after ${attempt} attemps.`;
             }
         
         inp.style.display="none";
         guessbtn.style.display="none";
         startgamebtn.style.display="inline-block"
+        attempt=0;
+        }
+        else if(attempt<3){
+            header.innerHTML="Wrong Number";
+            displaytext.innerHTML=`Try Again!. you have now ${3-attempt} left`; 
+        }
+
+        if(attempt===3){
+            header.innerHTML="SORRY USER"
+            displaytext.innerHTML=` You couldn,t guess the right number in ${attempt} attempt, the number was : ${random}`;
+        inp.style.display="none";
+        guessbtn.style.display="none";
+        startgamebtn.style.display="inline-block";
         attempt=0;
         }
         inp.value="";
