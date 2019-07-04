@@ -18,8 +18,7 @@
     <button id="btn1">Animate</button>
 
 
-    <div id="element1">This is Element with id</div>
-    <div class="element2">This is Element with id</div>
+    <div id="element1">Image 1, click to see image 2</div>
     <img src="image.jpeg" alt="" width="300">
     <button id="btn2">Change image</button>
 
@@ -48,8 +47,22 @@ $('#btn1').click(function() {
 
 //select multiple elements
 $("#btn2").click(function(){
-    $("#element1,.element2").html("image is changed")
-    $("img").attr("src","image1.jpeg");
+    $("#element1").html(function(){
+        let text= $("#element1").html();
+        if(text==="Image 1, click to see image 2"){
+            return "Image 2, click to see image 1";
+        }else{
+            return "Image 1, click to see image 2";
+        }
+    })
+    $("img").attr("src",function(){
+        let src=$("img").attr("src");
+        if(src==="image.jpeg"){
+            return "image1.jpeg"
+        }else{
+            return "image.jpeg"
+        }
+    });
 })
 
   </script>
