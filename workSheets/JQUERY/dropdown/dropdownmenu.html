@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drop Down Menu</title>
+<style>
+.main{
+    width: 100%;
+    height: 100vh;
+}
+h1{
+    width: 100%;
+    text-align:center;
+    background: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 60px;
+}
+#mynav{
+    display: flex;
+}
+#mynav >li{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    list-style: none;
+    border: 1px solid;
+    line-height: 50px;
+    background: #2E9AFE;
+}
+#mynav >li a{
+    display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-decoration: none;
+  text-align:center;
+  color: white;
+  font-size: 30px;
+}
+#mynav >li ul{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+
+.dropdown >li{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    left: -40px;
+    top: 50px;
+    list-style: none;
+    border: 1px solid;
+    line-height: 50px;
+    background: black;
+}
+.dropdown >li a{
+    display: inline-block; 
+    width: 100%;
+  height: 100%;
+  font-size: 20px;
+  position: absolute;
+  text-decoration: none;
+  text-align: center;
+}
+/* #mynav >li:nth-child(2):hover .dropdown{
+    display: flex !important;
+} */
+</style>
+</head>
+<body>
+    <div class="main">
+        <h1>Christopher  Nolan's Movie</h1>
+        <nav>
+            <ul id="mynav">
+                <li><a href="#">The Prestige</a></li>
+                <li id="btn"><a href="#">Inception</a>
+                <ul class="dropdown">
+                    <li><a href="#">Leonando Di caprio</a></li>
+                    <li><a href="#">Leonando Di caprio</a></li>
+                    <li><a href="#">Leonando Di caprio</a></li>
+                </ul></li>
+                <li><a href="#">Memento</a></li>
+                <li><a href="#">Insterseller</a></li>
+                <li><a href="#">Dark Knight</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <script src="mainfordropdown.js">
+    </script>
+</body>
+</html>
