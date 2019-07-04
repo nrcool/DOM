@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Deligation</title>
+</head>
+<body>
+    <ul id="parent" class="NAME">
+        <li id="post1">item 1</li>
+        <li id="post2">item 2</li>
+        <li id="post3">item 3</li>
+        <li id="post4">item 4</li>
+        <li id="post5">item 5</li>
+        <li id="post6">item 6</li>
+        <li id="post7">item 7</li>
+    </ul>
+
+<div id="myDiv">
+    <h2>Evenet Deligation Example 2</h2>
+<a href="https://google.com">Google</a>
+<a class="classA" id="anchor" href="https://digitalcareerinstitute.org/">VISIT DCI </a>
+
+</div>
+
+    <script>
+
+    document.getElementById("parent").addEventListener('click',function(event){
+        
+        if(event.target && event.target.nodeName == "LI"){
+            console.log(event)
+            console.log(`list item ${event.target.id.replace("post","")} was clicked`)
+        }
+    })
+    
+    document.getElementById("myDiv").addEventListener('click',function(e){
+        console.log(e)
+        e.preventDefault();
+        if(e.target&& e.target.matches("a.classA")){
+            console.log("You clicked anchor tage");
+        }
+    })
+
+
+    </script>
+</body>
+</html>

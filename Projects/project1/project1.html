@@ -19,12 +19,12 @@ let inp;
 let i=1;
 while(i<4){
     if(i==1){
-        inp=prompt("Please guess any number between 1 and 10");
+        inp=Number(prompt("Please guess any number between 1 and 10"));
     }else{
-        inp=prompt("Wrong answer:try again :Please guess any number between 1 and 10");
+        inp=Number(prompt("Wrong answer:try again :Please guess any number between 1 and 10"));
     }
     
-    if(inp==random){
+    if(inp===random){
         result.innerHTML="You guessed in "+i+" attemps: you sucessfully guessed the right number : "+random;
         break;
     }
@@ -32,7 +32,6 @@ while(i<4){
 }
 if(i===4){
     result.innerHTML="Sorry you couldn,t guess right number .. number was :"+random;
-
 }
 
 

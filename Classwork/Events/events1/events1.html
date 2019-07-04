@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Event</title>
+</head>
+<body>
+<!--     <a href="https://google.com"> Anchor tag element</a>
+    <p id='demo'>button2<button id="button1">button1</button></p>
+  
+    <h1>
+        heading 1
+    </h1>
+
+<input type="text">
+
+<form id="form">
+   <label for="">NAME : <input type="text" name="name"> </label>
+   <button type="submit">Submit</button>
+   <button type="reset">reset</button>
+</form>
+<p id="log"></p>
+<p id="reset"></p> -->
+
+
+
+<p id="idnode...." name="namenode...">
+    hello
+</p>
+<script>
+    //prevent default behaviour
+/*     let list=document.querySelector('a');
+list.addEventListener("click",function(event){
+    console.log(event)
+    event.preventDefault();
+})
+//window event
+window.addEventListener('mousedown',function(e){
+    alert("window object")
+    console.log(e.target)
+})
+
+//stop propogation
+document.getElementById('button1').addEventListener('mousedown',function(event){
+    alert("button clicked");
+if(event.button==2){
+    event.stopPropagation();
+}
+})
+
+
+//remove event listener
+let heading =document.querySelector("h1");
+function listener(event){
+    if(event.type==="mouseenter"){
+        console.log(event)
+        heading.style.color="red";
+    }else if(event.type==="mouseleave"){
+        console.log(event)
+        heading.style.color="blue";
+        heading.removeEventListener('mouseleave',listener);
+    }
+}
+heading.addEventListener('mouseenter',listener);
+heading.addEventListener('mouseleave',listener); */
+
+//on page load; Dom content loaded
+/* function onLoad(event){
+    console.log(event);
+    alert('page is loaded');
+}
+document.addEventListener("DOMContentLoaded",onLoad); */
+
+//get key pressed on keyup event
+/* let input=document.querySelector("input");
+function OnKeyUpEvent(event){
+    console.log(event);
+    alert(`${event.key} was pressed`);
+}
+input.addEventListener("keyup",OnKeyUpEvent)
+
+
+//form events
+
+const form=document.getElementById("form");
+const log=document.getElementById("log");
+
+function logsubmit(event){
+    log.textContent=`Form submitted! Time stamp :${event.timeStamp}`;
+    event.preventDefault();
+    let formData=new FormData(event.target);
+    console.log(formData.get("name"));
+    console.log(formData)
+}
+form.addEventListener('submit',logsubmit);
+
+//reset form data
+const resetlog=document.getElementById("reset");
+
+function logReset(event){
+    resetlog.textContent= `Form reset! time stamp: ${event.timeStamp}`;
+}
+form.addEventListener("reset",logReset); */
+
+let p=document.querySelector('p');
+console.log(p)
+console.dir(p)
+console.dir(document.body)
+</script>
+</body>
+</html>
