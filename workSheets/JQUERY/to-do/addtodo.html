@@ -32,9 +32,10 @@
        
     </ul>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-    let form=document.getElementById("form");
+   /*  let form=document.getElementById("form");
     let inp=document.getElementById("inp");
     let ul=document.getElementById("items");
     let span=document.getElementsByTagName("span");
@@ -50,7 +51,25 @@
        console.log(e.target.parentElement)
      items.removeChild(e.target.parentElement);
    }
+ }) */
+
+
+
+
+ $("#form").submit(function(e){
+     e.preventDefault();
+     let elem=` <li>${$("#inp").val()} <span>X</span>
+        </li>`
+    $("#items").prepend(elem);
+    $("#inp").val("");
  })
+
+  $("#items").click(function(e){
+    if(e.target.tagName==="SPAN"){
+       e.target.parentNode.remove();
+    }
+  })
+
     
     </script>
 </body>
