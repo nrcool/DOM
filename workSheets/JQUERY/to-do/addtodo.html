@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AddToDo</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        li{
+            list-style: none;
+            width: 200px;
+        }
+    span{
+        float:right;
+        color:white;
+        background:red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Add To Do List</h1>
+    <form id="form">
+        <input type="text" id="inp"> <button type="submit">Add</button>
+    </form>
+    <ul id="items">
+       
+    </ul>
+
+
+    <script>
+    let form=document.getElementById("form");
+    let inp=document.getElementById("inp");
+    let ul=document.getElementById("items");
+    let span=document.getElementsByTagName("span");
+    form.addEventListener("submit",function(e){
+        e.preventDefault();
+        let elem=` <li>${inp.value} <span>X</span>
+        </li>`;
+        items.innerHTML+=elem;
+        inp.value="";
+    })
+ items.addEventListener('click',function(e){
+   if(e.target.tagName==="SPAN"){
+       console.log(e.target.parentElement)
+     items.removeChild(e.target.parentElement);
+   }
+ })
+    
+    </script>
+</body>
+</html>
