@@ -5,19 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tab menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body{
+        width: 100%;
+        height: 10vh;
+    }
+    .tabmenu{
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+    .menu{
+        width: 200px;
+        font-size: 20px;
+        color: white;
+        background: linear-gradient(45deg,blue,black);
+        text-align: center;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .menu:hover{
+        background: linear-gradient(45deg,black,yellow)
+    }
+    #active{background: linear-gradient(45deg,black,yellow)}
+    .tabcontent{
+        position: relative;
+        width: 800px;
+        margin: 0 auto;
+    }
+    .tabcontent>div{
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: 5px 5px 2px black;
+        display: none;
+        color: white;
+        background: linear-gradient(45deg,black,yellow);
+    }
+    #main{
+        display: block;
+    }
+    
+    </style>
 </head>
 <body>
     <div class="tabmenu">
-        <div class="menu">Tab 1</div>
-        <div class="menu1">Tab 2</div>
-        <div class="menu1">Tab 3</div>
-        <div class="menu1">Tab 4</div>
+        <div class="menu" id="active">Tab 1</div>
+        <div class="menu">Tab 2</div>
+        <div class="menu">Tab 3</div>
+        <div class="menu">Tab 4</div>
     </div>
     <div class="tabcontent">
-        <div class="tabdisplay">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
-        <div class="tabdisplay">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
-        <div class="tabdisplay">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
-        <div class="tabdisplay">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
+        <div id="main">Lorem ipsum dolor sit amet consectetur,Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quia. adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
+        <div >Lorem ipsum dolor sit amet consectetur, adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reprehenderit enim veritatis laboriosam, suscipit corporis labore optio odio tempora modi debitis explicabo numquam qui facere. Magni ipsam recusandae hic. Natus. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
+        <div>Lorem ipsum dolor sit amet consectetur,Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi tenetur incidunt et quibusdam aspernatur nihil! adipisicing elit. Obcaecati iste, fugit eaque possimus iure in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
+        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iste, fugit eaque possimus iure Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates saepe dignissimos ex eveniet alias beatae explicabo, modi corrupti ad necessitatibus architecto provident fuga fugit vero? in quia provident sunt a quidem natus, hic harum ullam architecto, itaque saepe atque deleniti beatae.</div>
     </div>
 </body>
 </html>
