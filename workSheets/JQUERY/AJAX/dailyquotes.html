@@ -33,9 +33,30 @@
                 <strong>&#xFF02</strong>An old surrealist trick was to take images that had no business being together and plopping them into the same image. Your mind wants to make associations. Design does that all the time.<strong>&#xFF02</strong>
         </div>
         <div>
-            ----- <i id="author">Author Name</i> -----
+            ----- <i id="author">Cullen Hightower</i> -----
         </div>
         <div id="btn">Get New Quote</div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    
+    $("document").ready(function(){
+        $('#btn').on('click', function(e) {
+    $.ajax( {
+      url: 'https://quota.glitch.me/random',
+      success: function(data) {
+          console.log(data)
+        $("#quote").html(`<strong>&#xFF02</strong>${data.quoteText}<strong>&#xFF02</strong>`);
+        $("#author").html(data.quoteAuthor)
+      
+      },
+      cache: false
+    });
+  });
+});
+    
+    
+    </script>
+
 </body>
 </html>
