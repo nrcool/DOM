@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dragable, Dropable</title>
+    <style>
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .main{
+        width: 400px;
+        height: 400px;
+        background: greenyellow;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    #box1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+    }
+    #box2{
+        width: 200px;
+        height: 200px;
+        background: blue;
+        color: white;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="box1">BOX 1</div>
+        <div id="box2">BOX 2</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+$("document").ready(function(){
+    $("#box1").draggable();
+    $("#box2").droppable({
+        drop:function(){
+            alert("dropped");
+        }
+    });
+})
+
+</script>
+</body>
+</html>
