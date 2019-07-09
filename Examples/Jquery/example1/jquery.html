@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USING JQUERY</title>
+</head>
+<body>
+    <div class="main">
+
+    </div>
+    <p id="para">
+      Change inner html
+    </p>
+
+    <button id="btn">CLICK ME</button>
+    <button id="btn1">Animate</button>
+
+
+    <div id="element1">Image 1, click to see image 2</div>
+    <img src="image.jpeg" alt="" width="300">
+    <button id="btn2">Change image</button>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+
+      //on document ready 
+  $(document).ready(function(){
+      $(".main").html("Main DATA ")
+  });
+//change css 
+
+  $("#btn").click(function(){
+      $("#para").css({"background":"green","color":"red","font-size":"30px"
+      });
+  })
+
+
+//animation
+
+$('#btn1').click(function() {
+    $('#para').animate({"background":"green","color":"red","font-size":"30px","position":"absolute","bottom":"-100px"
+      }, 2000)
+});  
+
+//select multiple elements
+$("#btn2").click(function(){
+    $("#element1").html(function(){
+        let text= $("#element1").html();
+        if(text==="Image 1, click to see image 2"){
+            return "Image 2, click to see image 1";
+        }else{
+            return "Image 1, click to see image 2";
+        }
+    })
+    $("img").attr("src",function(){
+        let src=$("img").attr("src");
+        if(src==="image.jpeg"){
+            return "image1.jpeg"
+        }else{
+            return "image.jpeg"
+        }
+    });
+})
+
+  </script>
+
+
+</body>
+</html>
